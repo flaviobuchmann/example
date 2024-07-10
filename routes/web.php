@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
+use App\Models\Shop;
 
 
 Route::get('/', function () {
@@ -18,4 +19,9 @@ Route::get('/jobs/{id}', function ($id) {
 });
 Route::get('/contact', function () {
     return view("contact");
+});
+Route::get('/shop', function () {
+    return view('shop', [
+        'items' => Shop::all()
+    ]);
 });
